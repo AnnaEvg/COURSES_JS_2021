@@ -156,12 +156,33 @@ console.log(arr_2);*/
 }
 console.log(getDivisors(14));*/
 
+//15. Дан массив с числами. Выведите последовательно его элементы.
 
-// 15. Дан массив с числами. Выведите последовательно его элементы.
+/*let arr = [10, 20, 17, -45, 23, 2];
 
-let arr = [10, 20, 17, -45, 23, 2] ;
-
-
+let func = arr_2 => {
+  for (let i = 0; i < arr_2.length; i += 1) {
+  console.log(arr_2[i]);
+  }  
+};
+console.log(func(arr));*/
 
 // 16. Дано число. Сложите его цифры. Если сумма получилась более 9-ти, опять сложите его цифры.
 //И так, пока сумма не станет однозначным числом (9 и менее).
+
+let getDigitsSum = (num) => {
+  let Sum = 0;
+  num = String(num);
+  for (let i = 0; i < num.length; i++) {
+    Sum += +num[i];
+  }
+  return Sum;
+};
+let get9sum = (n) => {
+  for (; n > 9; ) {
+    n = getDigitsSum(n);
+  }
+  return n;
+};
+
+console.log(get9sum(4796));
