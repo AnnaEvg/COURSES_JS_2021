@@ -173,31 +173,26 @@ console.log (path(pathname)) ; */
 //Создайте метод объекта String endsWith(), который сравнивает подстроку str1 с окончанием исходной строки str
 // и определяет заканчивается ли строка символами подстроки.
 
-var str = "Каждый охотник желает знать";
+/*var str = "Каждый охотник желает знать";
 var str1 = "скрипт";
 var str2 = "знать";
 
 String.prototype.endsWith = function (substring) {
-  let arr = str.split(" ");
-  {
-    return str2 == arr.pop() ? true : false;
-  }
+  return str.search(substring) != -1;
 };
 
-console.log(str.endsWith(str2));
+console.log(str.endsWith(str1));
+console.log(str.endsWith(str2));*/
 
 // 16. Подстрока до/после указанного символа
 // Напишите функцию getSubstr(str, char, pos), которая возвращает часть строки, расположенную после или
 //до указанного символа char в зависимости от параметра pos.
 
-/*var str = "Астрономия — Наука о небесных телах"; //перерешать
-
-function getSubstr(str, char, pos) {
-  return str.slice(char, pos).join(" ");
-}
-
-console.log(getSubstr(str, "—", 5));
-
+// var str = "Астрономия — Наука о небесных телах";
+// function getSubstr(str, char, pos) {
+//   return pos === 0 ? str.slice(0, str.indexOf(char)) : str.slice(str.indexOf(char) + 1, str.length);
+// }
+// console.log(getSubstr(str, "—", 0));
 
 //17. Вставить подстроку в указанную позицию строки
 //Напишите функцию insert(str, substr, pos), которая вставляет подстроку substr в указанную позицию pos строки str. По умолчанию подстрока вставляется в начало строки.
