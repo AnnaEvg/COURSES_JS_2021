@@ -132,17 +132,45 @@ getSum() */
 
 //10   Дан массив с числами. Не используя метода reverse переверните его элементы в обратном порядке.
 
-let arr = [1, 6, 6, 8, 9, 3];
+/* let arr = [1, 6, 6, 8, 9, 3];
 
+function newreverse() {
+  let newArr = [];
 
-// arr.sort();
-
-
-console.log(arr);
-
+  for (let i = 0; i < arr.length; i++) {
+    newArr.unshift(arr[i]);
+  }
+  console.log(newArr);
+}
+newreverse();
+ */
 
 //11   Дан массив с числами. Узнайте сколько элементов с начала массива надо сложить, чтобы в сумме получилось больше 10-ти.
+
+/* let arr = [1, 6, 6, 8, 9, 3];
+function sumTen() {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+    if (sum > 10) {
+      console.log(i + 1);
+      break;
+    }
+    // console.log(sum);
+  }
+}
+
+sumTen(); */
 
 //12   Сделайте функцию arrayFill, которая будет заполнять массив заданными значениями.
 //Первым параметром функция принимает значение, которым заполнять массив, а вторым - сколько элементов должно быть в массиве.
 //Пример: arrayFill('x', 5) сделает массив ['x', 'x', 'x', 'x', 'x'].
+
+/* function arrayFill(el, lenght){
+  let arr = [];
+  for (let i = 0; i < lenght; i++ ) {
+    arr.push(el);
+  }
+  console.log(arr);
+};
+arrayFill("x", 5); */
