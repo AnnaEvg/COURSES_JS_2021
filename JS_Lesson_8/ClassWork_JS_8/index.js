@@ -251,6 +251,23 @@ if (hero.fight() > dracula.fight()) {
 // town.setSmeValue("Population", "9 ml");
 // console.log(town.getTownName());
 
+// const town = {
+//   townName: "London",
+//   population: "13 ml",
+//   getTownName: function () {
+//     return this.townName;
+//   },
+//   getPopulation: function () {
+//     return this.population;
+//   },
+//   setSomeValue: function (key, value) {
+//     this[key] = value;
+//   },
+// };
+// console.log(town);
+// town.setSomeValue("townName", "Paris");
+// town.setSomeValue("population", "9 ml");
+// console.log(town);
 //Работа с контекстом вызова
 
 // из домашки Напишите код, который получает из массива чисел новый массив, содержащий пары чисел, которые в сумме должны быть равны семи: (0:7), (1:6) и т.д.
@@ -270,3 +287,170 @@ if (hero.fight() > dracula.fight()) {
 //   // ваш код
 // }
 // console.log(sumSeven(arr));
+
+// function sayFullName(firstName, lastName) {
+//   return `${this.phrase} ${firstName} ${lastName}` ;
+// }
+
+// console.log(sayFullName("Alex", "Shirokov")) ;
+// console.log(sayFullName.call({phrase: 'Hello'}, 'Ivan', 'Smirnov'));
+
+/* function sayFullName(firstName, lastName) {
+  return `${this.phrase} ${firstName} ${lastName}` ;
+}
+
+let boundFullName = sayFullName.bind ({phrase: 'Bye'}, 'Max', 'Petrov');
+console.log(boundFullName()); */
+
+/* function sayFullName(firstName, lastName) {
+  return `${this.phrase} ${firstName} ${lastName}`;
+}
+
+let boundFullName = sayFullName
+  .bind({ phrase: "Bye" }, "Max", "Petrov") // не можем переназначить функцию, с-ная функция никак не изменитьс, мы должны вызывать новый байнд
+  .bind({ phrase: "Hello" }, "Kate", "Petrova");
+console.log(boundFullName()); */
+
+/* function sayFullName(firstName, lastName) {
+  return `${this.phrase} ${firstName} ${lastName}`;
+}
+
+let boundFullName = sayFullName.bind({ phrase: "Bye" }, "Max", "Petrov");
+let bound2 = sayFullName.bind({ phrase: "Hello" });
+
+console.log(boundFullName());
+console.log(bound2("Kate", "Petrova")); */
+
+/* function sayFullName(firstName, lastName) {
+  return `${this.phrase} ${firstName} ${lastName}`;
+}
+
+let boundFullName = sayFullName.bind({ phrase: "Bye" }, "Max", "Petrov");
+let sayHelloKate = sayFullName.bind({ phrase: "Hello" }, "Kate");
+
+console.log(boundFullName());
+console.log(sayHelloKate("Smirnova"));
+console.log(sayHelloKate("Petrova")); */
+
+//Практика
+
+/* const town = {
+  townName: "London",
+  population: "13 ml",
+  getTownName: function () {
+    return this.townName;
+  },
+  getPopulation: function () {
+    return this.population;
+  },
+  setSomeValue: function (key, value) {
+    this[key] = value;
+  },
+};
+
+const town2 = {
+  townName: "Paris",
+  population: "20ml",
+};
+
+// console.log(town.getTownName());
+// console.log(town.getTownName.call(town2));
+
+console.log(town2);
+
+// const bound = town.setSomeValue.bind(town2, "townName", "Moscow");
+
+// bound();
+
+const bound = town.setSomeValue.bind(town2);
+
+bound("townName", "Moscow");
+bound("population", "20ml");
+bound("country", "RUS");
+
+console.log(town2); */
+/* 
+function test() {
+  const a = 0;
+  console.log(a);
+}
+
+const bound = test.blind({a: 10});
+
+bound (); //будет 0, т.к. нет this  */
+
+/* function test() {
+  const a = 0;
+  console.log(this.a);
+}
+
+const bound = test.bind({ a: 10 },8);
+
+bound(); //будет 10 т.к. вызван единственны байнд */
+
+/* function test(b) {
+  const a = 0;
+  console.log(b);
+}
+
+const bound = test.bind({ a: 10 }, 8);
+
+bound(); //будет 8 */
+
+/* let a = 0;
+console.log(a);
+
+const test = () => {
+  a = 10;
+};
+test();
+console.log(a); */
+
+/* function getFullName() {
+  const firstName = "Alex";
+  function getSecondName(secondName) {
+    return `${firstName} ${secondName}`;
+  }
+  return getSecondName;
+}
+
+const clouser = getFullName();
+console.log(clouser("Smirnov")); */
+
+/* const getArea = (a) => {
+  return (b) => a * b;
+};
+
+const areaWidthTen = getArea(10);
+
+console.log(areaWidthTen(5));
+console.log(areaWidthTen(50));
+console.log(areaWidthTen(230));
+
+const areaWidthFor = getArea(4);
+
+console.log(areaWidthFor(3));
+console.log(areaWidthFor(21)); */
+
+//Используя замыкание написать функцию которая будет вычислять объём
+//параллелепипеда с высотой 10.
+
+/* let c = 10;
+const getVolume = (a) => {
+  return (b) => a * b * c;
+};
+
+const volumeWidthfiver = getVolume(5);
+
+console.log(volumeWidthfiver(15)); */
+
+/* const getVol = (height) => (width, length) => height * width * length;
+const getAll = getVol(10);
+
+console.log(getAll(15, 2));
+console.log(getAll(3, 3));
+const getAll2 = getVol(8);
+console.log(getAll2(11, 8)); */
+
+//Используя каррирование написать функцию которая будет вычислять объём
+//параллелепипеда.
